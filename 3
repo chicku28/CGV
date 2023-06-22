@@ -4,6 +4,18 @@
 GLfloat vertices[][3] = {{-1.0,-1.0,-1.0},{1.0,-1.0,-1.0},{1.0,1.0,-1.0}, {-1.0,1.0,-1.0}, {-1.0,-1.0,1.0},{1.0,-1.0,1.0}, {1.0,1.0,1.0}, {-1.0,1.0,1.0}};
 GLfloat normals[][3] = {{-1.0,-1.0,-1.0},{1.0,-1.0,-1.0},{1.0,1.0,-1.0},{-1.0,1.0,-1.0},{-1.0,-1.0,1.0},{1.0,-	1.0,1.0}, {1.0,1.0,1.0}, {-1.0,1.0,1.0}};
 GLfloat colors[][3] = {{0.0,0.0,0.0},{1.0,0.0,0.0}, {1.0,1.0,0.0}, {0.0,1.0,0.0},{0.0,0.0,1.0},{1.0,0.0,1.0}, {1.0,1.0,1.0}, 	{0.0,1.0,1.0}};
+void colorcube(void)
+{/* map vertices to faces */
+        polygon(0,3,2,1);
+        polygon(2,3,7,6);
+        polygon(0,4,7,3);
+        polygon(1,2,6,5);
+        polygon(4,5,6,7);
+        polygon(0,1,5,4);
+}
+static GLfloat theta[] = {0.0,0.0,0.0};
+static GLint axis = 2;
+
 void polygon(int a, int b, int c , int d)
 {/* draw a polygon via list of vertices */
  glBegin(GL_POLYGON);
